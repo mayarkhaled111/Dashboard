@@ -8,25 +8,25 @@ import { PieChart } from '@mui/x-charts/PieChart';
 import axios from 'axios'
 import WorldMap from './WorldMap'
 
+const bestSeller = [
+    {"id":1,"label": "beauty", "value": 40},
+    {"id":2,"label": "furniture", "value": 30},
+    {"id":3,"label": "womens-shoes", "value": 10},
+    {"id":4,"label": "kitchen-accessories", "value": 30},
+    {"id":5,"label": "skin-care", "value": 25}
+]
+
+
 export default function Products() {
     let { data } = useQuery({ queryKey: ['products'], queryFn: getProducts })
     let [products, setProducts] = useState([])
-    let [bestSeller, setBestSeller] = useState([])
     let { mutate: deleteProduct } = useMutation(deleteProducts)
 
-    async function getBestSeller() {
-        try {
-            const response = await axios.get('public/data/bestSeller.json');
-            setBestSeller(response.data);
-        } catch (error) {
-            console.error("Error fetching data:", error);
-        }
-    }
     useEffect(() => {
         setProducts(data?.data?.products);
-        console.log(products);
-        getBestSeller()
     }, [data])
+
+
     return (
         <div className='container mb-7'>
             <h1 className='text-3xl my-6 ms-5 text-blue-600'>Products</h1>

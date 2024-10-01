@@ -21,31 +21,6 @@ const ClassificationData = [
 
 export default function AdminGrowth() {
 
-  // const [data, setData] = useState([]);
-  // const [ClassificationData, setClassificationData] = useState([]);
-
-  // async function getData() {
-  //   try {
-  //     const response = await axios.get('public/data/adminGrowth.json');
-  //     setData(response.data);
-  //   } catch (error) {
-  //     console.error("Error fetching data:", error);
-  //   }
-  // }
-
-  // async function getClassification() {
-  //   try {
-  //     const response = await axios.get('public/data/adminsClassification.json');
-  //     setClassificationData(response.data);
-  //     console.log(ClassificationData)
-  //   } catch (error) {
-  //     console.error("Error fetching data:", error);
-  //   }
-  // }
-
-  useEffect(() => {
-    // getClassification()
-  }, []);
   return (
     <div className='container flex flex-col md:flex-row flex-wrap justify-center gap-7 my-7'>
       <motion.div

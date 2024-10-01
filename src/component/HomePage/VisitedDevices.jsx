@@ -3,24 +3,44 @@ import React, { useEffect, useState } from 'react'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { motion } from 'framer-motion'
 
-export default function VisitedDevices() {
-    let [accessData, setAccessData] = useState([])
-
-    async function getAccessData() {
-        try {
-            const response = await axios.get('public/data/accessData.json');
-            setAccessData(response.data);
-            console.log(accessData);
-
-
-        } catch (error) {
-            console.error("Error fetching data:", error);
-        }
+const accessData = [
+    {
+      "name": "April",
+      "Mobile": 4000,
+      "Desktop": 2400
+    },
+    {
+      "name": "May",
+      "Mobile": 3000,
+      "Desktop": 1398
+    },
+    {
+      "name": "June",
+      "Mobile": 2000,
+      "Desktop": 9800
+    },
+    {
+      "name": "July",
+      "Mobile": 2780,
+      "Desktop": 3908
+    },
+    {
+      "name": "August",
+      "Mobile": 1890,
+      "Desktop": 4800
+    },
+    {
+      "name": "September",
+      "Mobile": 2390,
+      "Desktop": 3800
+    },
+    {
+      "name": "October",
+      "Mobile": 3490,
+      "Desktop": 4300
     }
-
-    useEffect(() => {
-        getAccessData()
-    }, [])
+  ]
+export default function VisitedDevices() {
     return (
 
         <div className="container">

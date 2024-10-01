@@ -1,40 +1,28 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { motion } from 'framer-motion'
 import { PieChart } from '@mui/x-charts/PieChart';
 import { XAxis, YAxis, CartesianGrid, Tooltip, Legend, LineChart, Line } from "recharts";
-import axios from 'axios';
+
+const revenueData = [
+  {"month":"Jan", "revenue":5000 , "target":1800 },
+  {"month":"Feb", "revenue":3000 , "target":8200 },
+  {"month":"Mar", "revenue":3000 , "target": 7500},
+  {"month":"Apr", "revenue":4500 , "target": 4200},
+  {"month":"May", "revenue":9000 , "target": 5500},
+  {"month":"Jun", "revenue":4500 , "target": 2800},
+  {"month":"Jul", "revenue":1000 , "target": 8500}
+]
+
+const categoriesData = [
+  { "id": 0, "value": 10, "label": "Phones" ,"color":"#2865EB"},
+  { "id": 1, "value": 30, "label": "Clothes", "color":"#C68FE6"},
+  { "id": 2, "value": 20, "label": "Laptops", "color":"#FFF7F7"},
+  { "id": 3, "value": 20, "label": "Beauty" , "color":"#6C48C5"},
+  { "id": 4, "value": 20, "label": "Home" , "color":"#C96868"},
+  { "id": 5, "value": 20, "label": "Books" , "color":"#1230AE"}
+]
 
 export default function SalesChart() {
-  const [revenueData, setRevenueData] = useState([]);
-  const [categoriesData, setCategoriesData] = useState([]);
-
-
-  // function to get data of revenue
-  async function getRevenueData() {
-    try {
-      const response = await axios.get('public/data/revenueData.json');
-      setRevenueData(response.data);
-
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  }
-
-  // function to get data of categories
-  async function getCategoriesData() {
-    try {
-      const response = await axios.get('public/data/categoriesData.json');
-      setCategoriesData(response.data);
-
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  }
-
-  useEffect(() => {
-    getRevenueData();
-    getCategoriesData()
-  }, []);
 
   return (
     <div className="container flex flex-col md:flex-row flex-wrap justify-center gap-7 my-7">

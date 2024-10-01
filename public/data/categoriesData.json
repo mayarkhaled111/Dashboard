@@ -1,8 +1,0 @@
-[
-    { "id": 0, "value": 10, "label": "Phones" ,"color":"#2865EB"},
-    { "id": 1, "value": 30, "label": "Clothes", "color":"#C68FE6"},
-    { "id": 2, "value": 20, "label": "Laptops", "color":"#FFF7F7"},
-    { "id": 3, "value": 20, "label": "Beauty" , "color":"#6C48C5"},
-    { "id": 4, "value": 20, "label": "Home" , "color":"#C96868"},
-    { "id": 5, "value": 20, "label": "Books" , "color":"#1230AE"}
-]

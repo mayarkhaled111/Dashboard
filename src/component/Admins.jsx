@@ -5,15 +5,78 @@ import AdminGrowth from './adminPage/AdminGrowth'
 import { motion } from 'framer-motion'
 import { toast } from 'react-toastify'
 
-export default function Admins() {
-  let [adminData, setAdminData] = useState([])
-  let [searchAdmin, setSearchAdmin] = useState([])
 
-  async function getAdminData() {
-    let response = await axios.get('public/data/admin.json')
-    setAdminData(response.data)
-    setSearchAdmin(response.data)
+const admins =[
+  {
+    "id": 1,
+    "name": "Alice Smith",
+    "email": "alice.smith@example.com",
+    "role": "Super Admin",
+    "status": "Active",
+    "lastLogin": "2024-09-20T14:30:00Z"
+  },
+  {
+    "id": 2,
+    "name": "Bob Johnson",
+    "email": "bob.johnson@example.com",
+    "role": "Viewer",
+    "status": "Suspended",
+    "lastLogin": "2024-09-19T09:15:00Z"
+  },
+  {
+    "id": 3,
+    "name": "Charlie Brown",
+    "email": "charlie.brown@example.com",
+    "role": "Editor",
+    "status": "Active",
+    "lastLogin": "2024-09-18T11:45:00Z"
+  },
+  {
+    "id": 4,
+    "name": "Diana Prince",
+    "email": "diana.prince@example.com",
+    "role": "Admin",
+    "status": "InActive",
+    "lastLogin": "2024-09-17T13:30:00Z"
+  },
+  {
+    "id": 5,
+    "name": "Eve Adams",
+    "email": "eve.adams@example.com",
+    "role": "Moderator",
+    "status": "Suspended",
+    "lastLogin": "2024-09-16T16:00:00Z"
+  },
+  {
+    "id": 6,
+    "name": "John Doe",
+    "email": "john.doe@example.com",
+    "role": "Admin",
+    "status": "Active",
+    "lastLogin": "2024-09-24T12:34:00"
+  },
+  {
+    "id": 7,
+    "name": "Jane Smith",
+    "email": "jane.smith@example.com",
+    "role": "Editor",
+    "status": "InActive",
+    "lastLogin": "2024-09-23T10:15:00"
+  },
+  {
+    "id": 8,
+    "name": "Michael Johnson",
+    "email": "michael.johnson@example.com",
+    "role": "Viewer",
+    "status": "Suspended",
+    "lastLogin": "2024-09-22T08:45:00"
   }
+]
+export default function Admins() {
+  let [adminData, setAdminData] = useState(admins)
+  let [searchAdmin, setSearchAdmin] = useState(admins)
+
+ 
   function deleteAdmin(id) {
     setSearchAdmin(prevAdminData => prevAdminData.filter(admin => admin.id !== id));
     toast.info('Done')
@@ -27,9 +90,6 @@ export default function Admins() {
     }
   }
 
-  useEffect(() => {
-    getAdminData()
-  }, [])
   return (
     <div className='container'>
       <h1 className='text-3xl my-6 ms-5 text-blue-600'>Admins</h1>
