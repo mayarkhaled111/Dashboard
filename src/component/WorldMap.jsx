@@ -63,7 +63,7 @@ export default function WorldMap() {
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
           {geoData && (
-            <GeoJSON 
+            <GeoJSON
               data={geoData}
               style={styleFeature}
               onEachFeature={(feature, layer) => {
