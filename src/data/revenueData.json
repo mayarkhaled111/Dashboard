@@ -1,0 +1,9 @@
+[
+    {"month":"Jan", "revenue":5000 , "target":1800 },
+    {"month":"Feb", "revenue":3000 , "target":8200 },
+    {"month":"Mar", "revenue":3000 , "target": 7500},
+    {"month":"Apr", "revenue":4500 , "target": 4200},
+    {"month":"May", "revenue":9000 , "target": 5500},
+    {"month":"Jun", "revenue":4500 , "target": 2800},
+    {"month":"Jul", "revenue":1000 , "target": 8500}
+]
