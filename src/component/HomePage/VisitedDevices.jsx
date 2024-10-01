@@ -8,7 +8,7 @@ export default function VisitedDevices() {
 
     async function getAccessData() {
         try {
-            const response = await axios.get('src/data/accessData.json');
+            const response = await axios.get('public/data/accessData.json');
             setAccessData(response.data);
             console.log(accessData);
 

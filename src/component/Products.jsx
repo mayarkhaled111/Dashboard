@@ -16,7 +16,7 @@ export default function Products() {
 
     async function getBestSeller() {
         try {
-            const response = await axios.get('src/data/bestSeller.json');
+            const response = await axios.get('public/data/bestSeller.json');
             setBestSeller(response.data);
         } catch (error) {
             console.error("Error fetching data:", error);

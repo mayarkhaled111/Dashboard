@@ -10,7 +10,7 @@ export default function Admins() {
   let [searchAdmin, setSearchAdmin] = useState([])
 
   async function getAdminData() {
-    let response = await axios.get('src/data/admin.json')
+    let response = await axios.get('public/data/admin.json')
     setAdminData(response.data)
     setSearchAdmin(response.data)
   }

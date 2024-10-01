@@ -12,7 +12,7 @@ export default function SalesChart() {
   // function to get data of revenue
   async function getRevenueData() {
     try {
-      const response = await axios.get('src/data/revenueData.json');
+      const response = await axios.get('public/data/revenueData.json');
       setRevenueData(response.data);
 
     } catch (error) {
@@ -23,7 +23,7 @@ export default function SalesChart() {
   // function to get data of categories
   async function getCategoriesData() {
     try {
-      const response = await axios.get('src/data/categoriesData.json');
+      const response = await axios.get('public/data/categoriesData.json');
       setCategoriesData(response.data);
 
     } catch (error) {

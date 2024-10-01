@@ -12,7 +12,7 @@ export default function AdminGrowth() {
 
   async function getData() {
     try {
-      const response = await axios.get('src/data/adminGrowth.json');
+      const response = await axios.get('public/data/adminGrowth.json');
       setData(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -20,7 +20,7 @@ export default function AdminGrowth() {
   }
   async function getClassification() {
     try {
-      const response = await axios.get('src/data/adminsClassification.json');
+      const response = await axios.get('public/data/adminsClassification.json');
       setClassificationData(response.data);
       console.log(ClassificationData)
     } catch (error) {

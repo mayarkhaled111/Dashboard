@@ -7,7 +7,7 @@ export default function OverView() {
   
     async function getData() {
       try {
-        const response = await axios.get('src/data/overview.json'); // Update the URL based on your setup
+        const response = await axios.get('public/data/overview.json'); // Update the URL based on your setup
         setData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
